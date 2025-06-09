@@ -14,14 +14,18 @@ public:
     }
 };
 
-void Traversal(Node *head)
+bool searchKey(Node *head, int key)
 {
-    while (head != nullptr)
+    while (head != NULL)
     {
-        cout << head->data << " ";
+        if (head->data == key)
+        {
+            return true;
+        }
         head = head->next;
     }
-};
+    return false;
+}
 
 int main()
 {
@@ -49,9 +53,14 @@ int main()
         }
     }
 
-    Traversal(head);
-    return 0;
+    int key;
+    cout << "Enter the key to search : ";
+    cin >> key;
+
+    if (searchKey(head, key))
+        cout << "Yes";
+    else
+        cout << "No";
 }
 
-//O(n) complexity,O(1) space complexity
-//traverseList(head->next); recursive approach O(n) space complexity
+//O(N) Time and O(N) Space

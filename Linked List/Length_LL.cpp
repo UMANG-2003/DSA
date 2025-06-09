@@ -14,14 +14,16 @@ public:
     }
 };
 
-void Traversal(Node *head)
+int Length(Node *head)
 {
-    while (head != nullptr)
+    int count = 0;
+    while (head != NULL)
     {
-        cout << head->data << " ";
+        count++;
         head = head->next;
     }
-};
+    return count;
+}
 
 int main()
 {
@@ -49,9 +51,9 @@ int main()
         }
     }
 
-    Traversal(head);
+    cout << "Count of nodes is " << Length(head);
     return 0;
 }
 
-//O(n) complexity,O(1) space complexity
-//traverseList(head->next); recursive approach O(n) space complexity
+// Time complexity: O(n), Where n is the size of the linked list
+// Auxiliary Space: O(1), As constant extra space is used.
